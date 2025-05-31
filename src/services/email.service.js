@@ -41,7 +41,7 @@ const sendEmail = async (to, subject, html) => {
  */
 const sendResetPasswordEmail = async (to, token) => {
   const subject = 'Reset Your Password';
-  const resetPasswordUrl = `https://client-five-khaki.vercel.app/reset-password?token=${token}`;
+  const resetPasswordUrl = `https://client-nine-ochre.vercel.app/reset-password?token=${token}`;
   const html = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
       <h2 style="color: #333;">Password Reset Request</h2>
@@ -52,7 +52,7 @@ const sendResetPasswordEmail = async (to, token) => {
         Reset Password
       </a>
       <p>If you didn't request this, please ignore this email. This link will expire in 10 minutes.</p>
-      <p>Best regards,<br>Your App Team</p>
+      <p>Best regards,<br>RasReserve Team</p>
     </div>
   `;
   await sendEmail(to, subject, html);
