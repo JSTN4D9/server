@@ -66,10 +66,10 @@ const sendResetPasswordEmail = async (to, token) => {
  */
 const sendVerificationEmail = async (to, token) => {
   const subject = 'Verify Your Email Address';
-  const verificationEmailUrl = `https://client-five-khaki.vercel.app/verify-email?token=${token}`;
+  const verificationEmailUrl = `https://client-nine-ochre.vercel.app/verify-email?token=${token}`;
   const html = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-      <h2 style="color: #333;">Welcome to Our App!</h2>
+      <h2 style="color: #333;">Welcome to RasReserve</h2>
       <p>Dear user,</p>
       <p>Thank you for registering. Please verify your email address by clicking the button below:</p>
       <a href="${verificationEmailUrl}" 
@@ -77,7 +77,7 @@ const sendVerificationEmail = async (to, token) => {
         Verify Email
       </a>
       <p>If you didn't create an account, please ignore this email.</p>
-      <p>Best regards,<br>Your App Team</p>
+      <p>Best regards,<br>RasReserve Team</p>
     </div>
   `;
   await sendEmail(to, subject, html);
