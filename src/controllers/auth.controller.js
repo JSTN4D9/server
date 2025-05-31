@@ -23,9 +23,9 @@ const login = catchAsync(async (req, res) => {
   const user = await authService.loginUserWithEmailAndPassword(email, password);
   
   // Check if email is verified
-  //if (!user.isEmailVerified) {
-  //  throw new ApiError(httpStatus.UNAUTHORIZED, 'Please verify your email first');
-  //}
+  if (!user.isEmailVerified) {
+    throw new ApiError(httpStatus.UNAUTHORIZED, 'Please verify your email first');
+  
   
   const tokens = await tokenService.generateAuthTokens(user);
   res.send({ user, tokens });
